@@ -51,9 +51,10 @@ class RecSys:
         )
 ```
 
-выбрано косинусное расстояние, так как масштаб величин сильно разнится
+выбрано радиально-базисное расстояние, потому что RBF хорошо работает для сложных нелинейных зависимостей, когда 
+бинарные и количественные признаки могут взаимодействовать
 ```python
-diffs = cosine_similarity(target_vectors, user_vector)
+diffs = rbf_kernel(target_vectors, user_vector)
 result_df = pandas.DataFrame(diffs, columns=['similarity_rate'])
 
 ```
